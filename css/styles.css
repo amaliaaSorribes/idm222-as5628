@@ -1,0 +1,403 @@
+html {
+    --white: white;
+    --cream: #fef3e3;
+    --light-cream: #fffdf7;
+    --bisque: #ffe4cc;
+    --yellow: #FFD471;
+    --dark-yellow: #edb226;
+    --darker-yellow: #a87f1d;
+    --very-light-purple: #f2dff7;
+    --light-purple: #e6c1ef;
+    --medium-purple: #e391f8;
+    --dark-purple: #8B08AF;
+    --grey: #3D3D3D;
+    background-color: var(--cream);
+    color: var(--grey);
+}
+
+@font-face {
+    font-family: 'Grandstander';
+    src: url('../fonts/Grandstander-VariableFont_wght.ttf') format('truetype'),
+    url('../fonts/Grandstander-Thin.woff2') format('woff2'), 
+    url('../fonts/Grandstander-Thin.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'NotoSans';
+    src: url('../fonts/NotoSans-VariableFont_wdth,wght.ttf') format('truetype'),
+    url('../fonts/NotoSans-Regular.woff2') format('woff2'),
+    url('../fonts/NotoSans-Regular.woff') format('woff');
+}
+
+* {
+    font-family: 'NotoSans', Verdana, Geneva, Tahoma, sans-serif;
+    font-size: small;
+    line-height: 20px;
+}
+
+header {
+    background: var(--light-purple);
+    height: 48px;
+    width: 100%;
+  
+    position: fixed;
+    left: 0;
+    top: 0;
+  
+    .logo {
+        position: absolute;
+        left: 1rem;
+        top: 1rem;
+        z-index: 1000;
+        color: var(--dark-purple);
+        font-family: 'Grandstander', Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: 600;
+        font-size: 20px;
+        text-decoration: none;
+    }
+
+    label {
+      cursor: pointer;
+      height: 20px;
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      width: 26px;
+      z-index: 101;
+  
+      span {
+        background-color: var(--dark-purple);
+        border-radius: 2px;
+        display: block;
+        height: 3px;
+        position: absolute;
+        width: 100%;
+  
+        transform-origin: left;
+  
+        &:nth-child(1) {
+          top: 0;
+        }
+  
+        &:nth-child(2) {
+          top: 8px;
+        }
+  
+        &:nth-child(3) {
+          top: 16px;
+        }
+      }
+    }
+}
+  
+nav {
+    background: var(--very-light-purple);
+    height: 100vh;
+    margin-block-start: 48px;
+    width: 300px;
+  
+    position: fixed;
+    right: -300px;
+    top: 0;
+    z-index: 100;
+  
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+  
+      li {
+        padding: 0;
+  
+        a {
+          color: var(--dark-purple);
+          display: block;
+          font-size: 1.25rem;
+          padding-block: 1rem;
+          padding-inline: 1rem;
+          text-decoration: none;
+  
+          &:hover {
+            background-color: var(--light-purple);
+          }
+        }
+      }
+
+      .sub {
+        margin-left: 25px;
+      }
+    }
+}
+  
+/* Show nav when checkbox is checked */
+.nav-toggle:checked ~ nav {
+    right: 0;
+}
+  
+.nav-toggle:checked ~ .nav-toggle-label span:nth-child(1) {
+    transform: rotate(45deg);
+    top: -2px;
+}
+  
+.nav-toggle:checked ~ .nav-toggle-label span:nth-child(2) {
+    opacity: 0;
+}
+  
+.nav-toggle:checked ~ .nav-toggle-label span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+main {
+    margin-top: 75px;
+}
+
+h1 {
+    font-family: 'Grandstander', Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    font-size: 2.25em;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--dark-purple);
+    letter-spacing: -1px;
+}
+
+h2 {
+    margin: 2.5rem;
+    margin-bottom: 0px;
+    padding: 5px;
+    font-family: 'Grandstander', Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.75rem;
+    font-weight: 600;
+    background-color: var(--light-purple);
+    color: var(--dark-purple);
+}
+
+h3 {
+    margin-top: 4px;
+    color: var(--dark-purple);
+    font-size: medium;
+}
+
+b {
+    font-family: 'Grandstander', Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--medium-purple);
+}
+
+.internalLink {
+    font-weight: 700;
+}
+
+h1 {
+    position: fixed; 
+    top: 15px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+}
+
+footer {
+    background-color: var(--white);
+    margin-top: 60px;
+    padding: 20px 0px 50px 2rem;
+    background-color: var(--light-purple);
+}
+
+footer.bottom {
+    position: fixed;
+    bottom: 0; 
+    width: 100%;
+}
+
+section {
+    background-color: var(--white);
+    padding: 8px 20px;
+    border-radius: 20px;
+}
+
+section, article, div.form-container, div.intro {
+    margin: 2rem;
+}
+
+section, input, textarea {
+    margin-bottom: 15px;
+}
+
+/*Create 2 columns*/
+div.container {
+    display: flex;
+    padding-bottom: 0px;
+    margin-top: 15px;
+}
+.column {
+    width: 50%;
+    padding: 12px;
+}
+
+/*For sublists*/
+dd {
+    margin-top: -8px;
+    margin-left: 30px;
+}
+
+dd.list {
+    margin: 8px 5px;
+}
+
+button, input[type="submit"] {
+    background-color: var(--yellow);
+    border: 2px solid var(--dark-yellow);
+    padding: 8px 30px;
+    border-radius: 20px;
+    width: auto;
+    height: auto;
+    margin: 8px;
+}
+
+form {
+    input, textarea {
+        border-radius: 8px;
+        border-color: var(--dark-purple);
+        height: 2rem;
+        width: 98%;
+    }
+
+    /*Space for message in contact form*/
+    textarea {
+        height: 5rem;
+    }
+}
+
+main.index { 
+    img.amaliaPNG {
+        position: absolute;
+        height: 100%;
+        right: 0;
+        bottom: 0;
+    }
+
+    /*Allow for superposition of buttons over 
+        hands image and stack buttons*/
+    .buttonsIndex {
+        display: flex; 
+        flex-direction: column;
+        align-items: center; 
+        padding: 40px; 
+        margin-top: 40px; 
+        background-image: url('../images/hands.webp');
+        background-size: cover;
+        background-position: center;
+    }
+
+    /*Allow for superposition of profile picture*/
+    .flowersIndex {
+        padding: 20px; 
+        margin-top: 40px; 
+        background-image: url('../images/flowers.webp');
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        z-index: -1;
+    }
+
+    section.index {
+        margin-right: 40px;
+    }
+}
+
+main.resume { 
+    span.left-align{
+        float: left;
+    }
+
+    span.right-align{
+        float: right;
+    }
+
+    section span.left-align:first-of-type {
+        font-weight: bolder;
+    }
+
+    section span:nth-of-type(3) {
+        text-decoration: underline;
+    }
+}
+
+/*About page allow text to surround profile picture*/
+.amalia {
+    border-radius: 100px;
+    float: right;
+    margin: 12px;
+}
+
+main.art section:first-of-type {
+    margin-bottom: 40px;
+}
+
+main.art {
+    h2.art {
+        letter-spacing: 1px;
+        margin-top: 0;
+    }
+
+    /*Decrease text space in art section*/
+    section.art {
+        padding: 1px 15px;
+        margin: 15px 4px;
+    }
+
+    /*Fix sizes of images for gallery*/
+    .artImage {
+        width: 180px;
+        height: 230px;
+    }
+
+    /*Create space for image inside frame*/
+    .artCathegory {
+        background-size: cover;
+        background-position: center;
+        width: 170px;
+        height: 215px;
+        position: relative;
+        z-index: -1;
+    }
+
+    /*Fill artCathegory with a specific image for each cathegory*/
+    #acrylic {
+        background-image: url('../images/week3-1tuesday.webp');
+    }
+    #textile{
+        background-image: url('../images/shirtCantabria.webp');
+    }
+    #charcoal {
+        background-image: url('../images/thinker.webp');
+    }
+}
+
+main.ux {
+    /*article read more*/
+    section.darker {
+        background-color: var(--light-cream);
+    }
+
+    /*Init hide rest of text*/
+    #moreText {
+        display: none;
+    }
+
+    section.projects {
+        background-color: var(--bisque);
+    }
+
+    section.projects section:first-of-type {
+        padding: 0;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+
+    section.projects section:nth-of-type(2) {
+        padding: 15px; margin:0px; margin-bottom: 15px;
+    }
+}

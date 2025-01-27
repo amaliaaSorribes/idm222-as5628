@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="shortcut icon" href="images/logo.webp">
+    <title>Amalia Sorribes</title>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">AS</a>
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden/>
+        <h1>User Experience</h1>
+        <label for="nav-toggle" class="nav-toggle-label">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <nav>
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <ul class="sub">
+                    <li><a href="cs.html">Computer Science</a></li>
+                    <li><a href="ux.html">User Experience</a></li>
+                    <li><a href="art.html">Art</a></li>
+                </ul>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="ux">
+        <article>
+            <section class="darker">
+            <h3><i>My Personal Journey: CS to UX</i></h3>
+            <p>
+                I've always been passionate about computers and technology. As a kid, I enjoyed programming video games and trying to figure out how they worked. When I went to college, I decided to pursue a degree in computer science.
+            </p>
+            <div id="moreText">
+                <p>
+                    I love my computer science classes, but I found that I was more interested in the human side of technology. I wanted to create products that were not only technically impressive but also easy to use and enjoyable for people.
+                </p>
+                <p>
+                    For my first co-op experience, I worked as a front-end software developer. I worked on a variety of projects, but I felt like I wanted to experience the design process underneath. I wanted to have a more direct impact on the user experience of the products I was working on.
+                </p>
+                <p>
+                    Therefore, I added a minor in user experience and interaction design to learn more about the field. I'm currently mastering new skills in user research, interaction design, and visual design. I'm passionate about this new opportunity and willing to put in the work to succeed.
+                </p>
+                <p>
+                    I'm grateful for my background in both computer science and UX design. It’s the perfect combination for achieving my goal of using my technical skills to create products that make a real difference in people's lives.
+                </p>
+            </div>
+            <button class="read-more-btn" onclick="myFunction2()">Read More</button>
+            </section>
+        </article>
+        <section class="projects">
+            <h3>Projects</h3>
+            <section>
+                <div class="container">
+                    <figure class="column">
+                        <img src="images/nowWhat.webp" width="150px" alt="nowWhatPrototype">
+                    </figure>
+                    <div class="column">
+                        <h3>now what?</h3>
+                            <p>Followed UX principles to create a card activity to facilitate conversations to those grieving.</p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h3>Interactive map</h3>
+                <video controls="z-index: -1;" src="images/interactiveMapRTM.mp4" width="100%" alt="ïnteractiveMap"></video>
+                <p>When working for Reading Terminal Market, Amalia coded an interactive map to help customers with orientation around the market.</p>
+            </section>
+        </section>
+    </main>
+    <footer><a href="https://www.linkedin.com/in/amalia-sorribes-a91577240/" target="_blank">LinkedIn</a></footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
