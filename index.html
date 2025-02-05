@@ -9,7 +9,7 @@
     <title>Amalia Sorribes</title>
 </head>
 <body>
-    <header>
+    <header class="index">
         <a href="index.html" class="logo">AS</a>
         <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden/>
         <h1>Amalia Sorribes</h1>
@@ -36,20 +36,23 @@
             <section class="index">
                 <p><b>Welcome</b> to Amalia's Sorribes website portfolio! Here you will find a detailed selection of her most unique work, a copy of her resume with ongoing professional experience and much more!</p>
             </section>
-            <img src="images/amaliaProfilePNG.webp" class="amaliaPNG" alt="amaliaProfile">
+            <picture>
+                <source media="(min-width: 567px)" srcset="images/amaliaProfilePNG-large2.png" class="amaliaPNG"/>
+                <img src="images/amaliaProfilePNG.webp" class="amaliaPNG" alt="amaliaProfile">
+            </picture>
         </div>
 
-        <section>
-            <p>The purpose of this project is to display in an interactive manner her web developping skills and passion on User Experience. There is also a page dedicated to her art pieces organized by cathegory.</p>
-        </section>
+        <div class="container">
+            <section>
+                <p>The purpose of this project is to display in an interactive manner her web developping skills and passion on User Experience. There is also a page dedicated to her art pieces organized by cathegory.</p>
+            </section>
+        </div>
 
         <div class="buttonsIndex">
             <a href="cs.html"><button>Computer Science</button></a>
             <a href="ux.html"><button>User Experience</button></a>
             <a href="art.html"><button>Art</button></a>
         </div>
-        
-
     </main>
     <footer><a href="https://www.linkedin.com/in/amalia-sorribes-a91577240/" target="_blank">LinkedIn</a></footer>
 </body>
