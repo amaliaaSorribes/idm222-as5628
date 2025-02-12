@@ -94,9 +94,10 @@ nav {
     height: 100vh;
     margin-block-start: 48px;
     width: 300px;
+    box-shadow:  -5px 5px 10px rgba(0, 0, 0, 0.2);
   
     position: fixed;
-    right: -300px;
+    right: -310px;
     top: 0;
     z-index: 100;
   
@@ -200,6 +201,7 @@ h1 {
 
 main {
     margin-bottom: 110px;
+    width: 100%;
 }
 
 footer {
@@ -229,11 +231,21 @@ section, input, textarea {
 div.container {
     display: flex;
     padding-bottom: 0px;
-    margin-top: 15px;
+    width: 100%;
 }
+
 .column {
     width: 50%;
-    padding: 12px;
+    padding: 15px;
+    align-self: center;
+
+    img {
+        width: 100%;
+    }
+}
+
+figure.column {
+    padding-right: 5px;
 }
 
 /*For sublists*/
@@ -261,12 +273,14 @@ form {
         border-radius: 8px;
         border-color: var(--dark-purple);
         height: 2rem;
-        width: 98%;
+        width: 90%;
+        padding: 0px 15px;
     }
 
     /*Space for message in contact form*/
     textarea {
         height: 5rem;
+        padding: 15px;
     }
 }
 
@@ -285,8 +299,7 @@ main.index {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 40px; 
-        margin-top: 40px; 
+        padding: 40px;  
         background-image: url('../images/hands.webp');
         background-size: cover;
         background-position: center;
@@ -305,6 +318,11 @@ main.index {
 
     section.index {
         margin-right: 40px;
+    }
+
+    .container section {
+        margin: 8vw 2rem;
+        max-width: 1300px;
     }
 }
 
@@ -341,6 +359,8 @@ main.art {
     h2.art {
         letter-spacing: 1px;
         margin-top: 0;
+        margin-left: 30px;
+        text-align: center;
     }
 
     /*Decrease text space in art section*/
@@ -349,31 +369,75 @@ main.art {
         margin: 15px 4px;
     }
 
+    .art-container {
+        padding: 20px;
+    }
+
+    .column {
+        padding: 8px;
+        width: 80%;
+    }
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 50px;
+    }
+
+    .container:nth-child(2) {
+        flex-direction: column-reverse;
+    }
+
+    .container:last-child  {
+        margin-bottom: 0px;
+    }
+
     /*Fix sizes of images for gallery*/
-    .artImage {
-        width: 180px;
-        height: 230px;
+    .artFrame {
+        height: auto;
     }
 
     /*Create space for image inside frame*/
     .artCathegory {
-        background-size: cover;
-        background-position: center;
-        width: 170px;
-        height: 215px;
+        background-size:contain;
+        background-repeat: no-repeat;
         position: relative;
+        height: 100%;
+        width: 100%;
         z-index: -1;
     }
 
     /*Fill artCathegory with a specific image for each cathegory*/
     #acrylic {
-        background-image: url('../images/week3-1tuesday.webp');
+        background-image: url('../images/week3-1tuesday.png');
     }
     #textile{
         background-image: url('../images/shirtCantabria.webp');
     }
     #charcoal {
-        background-image: url('../images/thinker.webp');
+        background-image: url('../images/thinker.png');
+    }
+}
+
+main.artGallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    div.artGallery {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        max-width: 1300px;
+        
+        figure {
+            margin: 20px 15px;
+            img {
+                height: 300px;
+                width: 240px;
+            }
+        }
     }
 }
 
@@ -392,14 +456,112 @@ main.ux {
         background-color: var(--bisque);
     }
 
+    h3 {
+        margin-bottom: 10px;
+    }
+
     section.projects section:first-of-type {
-        padding: 0;
-        margin: 0;
+        padding: 0px;
+        margin: 0px;
         margin-bottom: 20px;
+        h3 {
+            margin-bottom: 0px;
+        }
     }
 
     section.projects section:nth-of-type(2) {
-        padding: 15px; margin:0px; margin-bottom: 15px;
+        padding: 15px; 
+        margin:0px; 
+        margin-bottom: 15px;
+    }
+
+    img {
+        border-radius: 10px;
+    }
+
+    div.projects {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 415px) {
+    main.art {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .art-intro, .art-container {
+            width: 80vw;
+            max-width: 1300px;
+        }
+
+        .container, .container:nth-child(2) {
+            flex-direction: row;
+        }
+
+        .column {
+            width: 50%;
+        }
+    }
+}
+
+@media (min-width: 596px) {
+    main {
+        margin-top: 48px;
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+    }
+
+    main.index {
+        margin-top: 76px;
+    }
+
+    main.about, main.resume, main.contact, main.cs, main.ux {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        section:not(section.projects section), section.projects {
+            width: 75vw;
+            max-width: 1300px;
+        }
+    }
+
+    /* section.darker,*/
+    main.ux article {
+        margin: 0px auto;
+    }
+
+    main.resume h2,  .form-container {
+        width: 75vw;
+    }
+
+    main.ux {
+        section.projects {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            h3 {
+                margin-right: auto;
+            }
+        }
+
+        div.projects {
+            width: 400px;
+        }
+    }
+
+    main.art {
+        .art-intro, .art-container {
+            width: 75vw;
+        }
     }
 }
 
@@ -414,18 +576,20 @@ main.ux {
         .flowersIndex, .buttonsIndex {
             height: 15vw;
             padding-top: 5vw;
-            padding-bottom: 5vw;
+            padding-bottom: 5vw; 
         }
     
         section {
             width: 65%;
             padding: 2px 40px;
+            max-width: 1300px;
         }
     
         .flowersIndex section {
             width: 50%;
             margin-top: 60px;
             margin-bottom: 60px;
+            max-width: 800px;
         }
     
         p {
@@ -445,79 +609,60 @@ main.ux {
         }
 
         button {
-            padding: 18px 30px;
+            padding: 1.25vw 3vw;
+            margin: 0px 1.5vw;
             border-radius: 50px;
             font-size: 1.2rem;
         }
     }
-}
 
-@media (min-width: 596px) {
-    main.about, main.resume, main.contact {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        
-        section {
-            width: 75vw;
+    main.art {
+        .art-container {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-around;
+            align-items: flex-start;
         }
 
-        p {
-            font-size: 1.1rem;
-            line-height: 1.4;
+        .container {
+            max-width: 245px;
+            flex-direction: column;
+            margin: 0px 10px;
         }
-    }
 
-    main.resume h2,  .form-container {
-        width: 75vw;
+        .container:nth-child(2) {
+            flex-direction: column-reverse;
+        }
+
+        .column {
+            width: 100%;
+        }
     }
 }
 
 @media (min-width: 1048px) {
-    main.about {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        
-        section {
-            width: 65%;
-        }
-
-        p {
-            font-size: 1.2rem;
-            margin: 1.5vw 1.75vw;
-            line-height: 1.55;
-        }
-    
-        b {
-            font-size: 1.4rem;
-        }
-
-        a {
-            font-size: 1.2rem;
-            line-height: 1.4;
-        }
-    }
-
-    main.resume {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        
-        section {
-            width: 65%;
-            padding: 1.5vw 1.75vw;
-        }
-
+    main {
         p, span, li {
             font-size: 1.2rem;
         }
 
+        p{
+            line-height: 1.55;
+            margin: 1.5vw 1.75vw;
+        }
+
+        b {
+            font-size: 1.3rem;
+        }
+
+        a {
+            font-size: 1.2rem;
+        }
+    }
+
+    main.resume {
         h2 {
-            width: 65%;
+            max-width: 1285px;
         }
     }
 
@@ -532,7 +677,41 @@ main.ux {
         }
     } */
 
-    .form-container {
-        width: 65%;
+    main.contact {
+        .form-container {
+            max-width: 1000px;
+        }
+
+        input {
+            height: 30px;
+        }
+
+        textarea {
+            height: 100px;
+        }
+    }
+
+    main.ux {
+        div.projects {
+            flex-direction: row-reverse;
+            width: 100%;
+            justify-content: space-around;
+        }
+
+        div.projects section {
+            width: 46%;
+            margin: 20px;
+            align-self: center;
+        }
+
+        .column h3 {
+            margin-left: 1.75vw;
+        }
+    }
+
+    main.art {
+        .art-intro b {
+            margin: 1.5vw 1.75vw;
+        }
     }
 }
