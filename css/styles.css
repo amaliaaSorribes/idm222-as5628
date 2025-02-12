@@ -460,7 +460,13 @@ main.ux {
         margin-bottom: 10px;
     }
 
-    section.projects section:first-of-type {
+    section.projects section {
+        padding: 15px; 
+        margin:0px; 
+        margin-bottom: 15px;
+    }
+
+    section.projects section:nth-of-type(2) {
         padding: 0px;
         margin: 0px;
         margin-bottom: 20px;
@@ -469,13 +475,11 @@ main.ux {
         }
     }
 
-    section.projects section:nth-of-type(2) {
-        padding: 15px; 
-        margin:0px; 
-        margin-bottom: 15px;
+    section img {
+        width: 100%;
     }
 
-    img {
+    figure img {
         border-radius: 10px;
     }
 
@@ -652,7 +656,7 @@ main.ux {
         }
 
         b {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
         }
 
         a {
@@ -693,9 +697,10 @@ main.ux {
 
     main.ux {
         div.projects {
-            flex-direction: row-reverse;
+            flex-flow: row wrap;
             width: 100%;
             justify-content: space-around;
+            max-width: 1100px;
         }
 
         div.projects section {
@@ -706,6 +711,10 @@ main.ux {
 
         .column h3 {
             margin-left: 1.75vw;
+        }
+
+        b {
+            margin: auto 1.75vw;
         }
     }
 
