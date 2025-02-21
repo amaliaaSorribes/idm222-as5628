@@ -9,3 +9,28 @@ function myFunction2() {
     readMoreBtn.textContent = 'Read Less';
     }
 }
+
+function openImageOverlay(event) {
+    const imgSrc = event.target.src;
+    console.log("img src: ", imgSrc);
+
+    const overlay = document.getElementsByClassName('overlay')[0];
+    overlay.style.display = 'block';
+
+    const image = document.createElement('img');
+    image.src = imgSrc;
+    image.className = "imageOverlay";
+    const main = document.querySelector('main');
+    main.appendChild(image);
+}
+
+function closeImageOverlay() {
+    const overlay = document.getElementsByClassName('overlay')[0];
+    overlay.style.display = 'none';
+
+    const image = document.getElementsByClassName('imageOverlay')[0];
+    const main = document.querySelector('main');
+    main.removeChild(image);
+}
+
+

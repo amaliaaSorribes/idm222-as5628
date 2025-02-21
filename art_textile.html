@@ -32,34 +32,36 @@
         </nav>
     </header>
     <main class="artGallery">
+        <div class="overlay" onclick="closeImageOverlay()"></div>
         <div class="artGallery">
             <figure>
-                <img src="images/shirtCantabria.webp" class="artImage" alt="shirtCantabria">
+                <img src="images/shirtCantabria.webp" class="artImage" alt="shirtCantabria" onclick="openImageOverlay(event)">
                 <figcaption>Cantabria shirt</figcaption>
             </figure>
             <figure>
-                <img src="images/toteBagScratch.webp" class="artImage" alt="toteBagScratch">
+                <img src="images/toteBagScratch.webp" class="artImage" alt="toteBagScratch" onclick="openImageOverlay(event)">
                 <figcaption>Back Scratch tote bag</figcaption>
             </figure>
             <figure>
-                <img src="images/toteBagSunset.webp" class="artImage" alt="toteBagSunset">
+                <img src="images/toteBagSunset.webp" class="artImage" alt="toteBagSunset" onclick="openImageOverlay(event)">
                 <figcaption>Sunset tote bag</figcaption>
             </figure>
             <figure>
-                <img src="images/shirtBarcelona.webp" class="artImage" alt="shirtBarcelona">
+                <img src="images/shirtBarcelona.webp" class="artImage" alt="shirtBarcelona" onclick="openImageOverlay(event)">
                 <figcaption>Barcelona shirt</figcaption>
             </figure>
             <figure>
-                <img src="images/shirtMonterrey.webp" class="artImage" alt="shirtMonterrey">
+                <img src="images/shirtMonterrey.webp" class="artImage" alt="shirtMonterrey" onclick="openImageOverlay(event)">
                 <figcaption>Monterrey shirt</figcaption>
             </figure>
             <figure>
-                <img src="images/denim.webp" class="artImage" alt="denim">
+                <img src="images/denim.webp" class="artImage" alt="denim" onclick="openImageOverlay(event)">
                 <figcaption>Michelangelo jacket</figcaption>
             </figure>
         </div>
         <a href="art.html"><button >Back to Art</button></a>
     </main>
     <footer><a href="https://www.linkedin.com/in/amalia-sorribes-a91577240/" target="_blank">LinkedIn</a></footer>
+    <script src="js/script.js"></script>
 </body>
 </html>
