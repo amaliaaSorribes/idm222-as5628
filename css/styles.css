@@ -334,10 +334,13 @@ main.index {
         max-width: 1300px;
     }
 
-    .skills {
+    div.skills {
+        width: 100%;
         display: flex;
-        justify-self: center;
-        margin-top: 30px;
+        justify-content: center;
+    }
+
+    img.skills {
         width: 80%;
         border-radius: 10px;
     }
@@ -667,7 +670,7 @@ main.ux {
             font-size: 1.2rem;
         }
 
-        .skills {
+        img.skills {
             width: 65%;
         }
     }
