@@ -159,6 +159,12 @@ h1 {
     text-align: center;
     color: var(--dark-purple);
     letter-spacing: -1px;
+    position: fixed; 
+    top: 15px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
 }
 
 h2 {
@@ -190,15 +196,6 @@ b {
     font-weight: 700;
 }
 
-h1 {
-    position: fixed; 
-    top: 15px;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    text-align: center;
-}
-
 main {
     margin-bottom: 110px;
     width: 100%;
@@ -219,7 +216,7 @@ section {
     border-radius: 20px;
 }
 
-section, article, div.form-container, div.intro {
+section, article, form, div.intro {
     margin: 2rem;
 }
 
@@ -308,13 +305,25 @@ main.index {
     /*Allow for superposition of profile picture*/
     .flowersIndex {
         padding: 20px; 
-        margin-top: 40px; 
+        margin-top: 40px;
         background-image: url('../images/flowers.webp');
         background-size: cover;
         background-position: center;
         position: relative;
-        z-index: -1;
+        z-index: -2;
     }
+/* 
+    .flowersCover {
+        padding: 20px; 
+        margin-top: 5vw;
+        height: 15vw;
+        padding-top: 5vw;
+        background-color: rgba(0, 0, 0, 0.2);
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        z-index: -1;
+    } */
 
     section.index {
         margin-right: 40px;
@@ -323,6 +332,19 @@ main.index {
     .container section {
         margin: 8vw 2rem;
         max-width: 1300px;
+    }
+
+    .skills {
+        display: flex;
+        justify-self: center;
+        margin-top: 30px;
+        width: 80%;
+        border-radius: 10px;
+    }
+
+    .skills2 {
+        width: 60%;
+        display: none;
     }
 }
 
@@ -532,7 +554,7 @@ main.ux {
         
         section:not(section.projects section), section.projects {
             width: 75vw;
-            max-width: 1300px;
+            max-width: 1200px;
         }
     }
 
@@ -541,7 +563,7 @@ main.ux {
         margin: 0px auto;
     }
 
-    main.resume h2,  .form-container {
+    main.resume h2,  form {
         width: 75vw;
     }
 
@@ -579,9 +601,9 @@ main.ux {
     
         .flowersIndex, .buttonsIndex {
             height: 15vw;
-            padding-top: 5vw;
-            padding-bottom: 5vw; 
-        }
+            /* padding-top: 5vw;
+            padding-bottom: 5vw;  */
+        } 
     
         section {
             width: 65%;
@@ -618,6 +640,10 @@ main.ux {
             border-radius: 50px;
             font-size: 1.2rem;
         }
+
+        .skills {
+            width: 65%;
+        }
     }
 
     main.art {
@@ -645,53 +671,62 @@ main.ux {
 }
 
 @media (min-width: 1048px) {
-    main {
-        p, span, li {
-            font-size: 1.2rem;
+    main, main.index {
+        p, span, li, a, h3 {
+            font-size: 1.4rem;
         }
 
-        p{
-            line-height: 1.55;
-            margin: 1.5vw 1.75vw;
+        p, li {
+            line-height: 1.8;
+        }
+
+        section {
+            padding: 1vw 2.5vw;
         }
 
         b {
-            font-size: 1.25rem;
+            font-size: 1.55rem;
         }
 
-        a {
-            font-size: 1.2rem;
+        h2 {
+            font-size: 1.8rem;
         }
     }
 
     main.resume {
         h2 {
-            max-width: 1285px;
+            max-width: 1250px;
+            padding: 10px 15px;
+            border-radius: 10px;
+            background-color: rgba(230, 193, 239, 0.6);
         }
     }
 
-    /* header.index {
-        h1 {
-            margin-top: 2px; //or 90px to be inside flowers
-            background-color: var(--dark-purple);
-            color: var(--light-purple);
-            padding: 5px;
-            text-align: center;
-            width: 260px;
-        }
-    } */
-
     main.contact {
-        .form-container {
+        form {
             max-width: 1000px;
         }
 
         input {
-            height: 30px;
+            height: 40px;
+            width: 95%;
+            max-width: 1000px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+
+        #submit{
+            width: auto;
         }
 
         textarea {
-            height: 100px;
+            height: 120px;
+            width: 95%;
+            margin-top: 10px;
+        }
+
+        label, input, textarea {
+            font-size: 1.3rem;
         }
     }
 
@@ -719,8 +754,48 @@ main.ux {
     }
 
     main.art {
-        .art-intro b {
-            margin: 1.5vw 1.75vw;
+        .art-intro {
+            padding-bottom: 2.5vw;
+        }
+    } 
+
+    /* header.index h1 {
+        margin-top: 130px;
+        font-size: 5rem;
+        color: var(--light-purple);
+        background-color: var(--dark-purple);
+        color: var(--light-purple); 
+        padding: 5px;
+        text-align: center;
+        width: auto;
+    } */
+
+    main.index {
+        p {
+            margin: 10px auto;
+        }
+
+        .skills {
+            display: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            justify-self: center;
+        }
+
+        .container section {
+            margin-left: 0px;
+            margin-right: 60px;
+        }
+
+        .skills2 {
+            display: block;
+            justify-self: center;
+            width: 60vw;
+            border-radius: 10px;
+            margin: 80px 60px;
+            max-width: 750px;
         }
     }
 }
