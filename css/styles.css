@@ -167,6 +167,16 @@ h1 {
     text-align: center;
 }
 
+h1.large-screen {
+    display: block;
+    position: relative;
+    top: 0px;
+    z-index: -1;
+    font-size: 2.5em;
+    margin-top: 35px;
+    visibility: hidden;
+}
+
 h2 {
     margin: 2.5rem;
     margin-bottom: 0px;
@@ -700,6 +710,38 @@ main.ux {
 }
 
 @media (min-width: 1048px) {
+   header h1, .nav-toggle-label {
+        display: none;
+   }
+
+    h1.large-screen {
+        visibility: visible;
+    }
+
+    nav {
+        position: relative;
+        background-color: transparent;
+        box-shadow: none;
+        margin-block-start: 0px;
+        width: auto;
+        left: 0;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        ul li, .sub {
+            display: inline-block; 
+            margin-right: 10px; 
+            
+            a {
+                &:hover {
+                    background-color: var(--very-light-purple);                  
+                }
+            }
+        }
+    }
+
     main, main.index {
         p, span, li, a, h3 {
             font-size: 1.4rem;
