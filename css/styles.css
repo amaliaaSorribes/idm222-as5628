@@ -116,6 +116,8 @@ nav {
           padding-block: 1rem;
           padding-inline: 1rem;
           text-decoration: none;
+
+          transition: background-color 0.5s ease-in 0.1s;
   
           &:hover {
             background-color: var(--light-purple);
@@ -172,9 +174,11 @@ h1.large-screen {
     position: relative;
     top: 0px;
     z-index: -1;
-    font-size: 2.5em;
+    font-size: 3em;
     margin-top: 35px;
+    width: fit-content;
     visibility: hidden;
+    background-color: var(--very-light-purple);
 }
 
 h2 {
@@ -268,11 +272,18 @@ dd.list {
 button, input[type="submit"] {
     background-color: var(--yellow);
     border: 2px solid var(--dark-yellow);
+    color: var(--grey);
     padding: 8px 30px;
     border-radius: 20px;
     width: auto;
     height: auto;
     margin: 8px;
+
+    transition: background-color 0.2s ease-in 0s;
+
+    &:hover {
+        background-color: var(--dark-yellow);                  
+    }
 }
 
 form {
@@ -310,12 +321,25 @@ main.index {
         background-image: url('../images/hands.webp');
         background-size: cover;
         background-position: center;
+
+        picture {
+            position: inherit;
+            width: auto;
+            z-index: -10;
+        }
     }
+/* 
+    .buttonsIndex:nth-child(2) {
+        z-index: 10;
+        position: inherit;
+        top: 10%;
+    } */
 
     /*Allow for superposition of profile picture*/
     .flowersIndex {
         padding: 20px; 
         margin-top: 40px;
+        min-height: 160px;
         background-image: url('../images/flowers.webp');
         background-size: cover;
         background-position: center;
@@ -485,7 +509,7 @@ main.artGallery {
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: rgba(0,0,0,0.5); 
+        background-color: rgba(0,0,0,0.6); 
         z-index: 2; 
         cursor: pointer; 
     }
@@ -500,6 +524,16 @@ main.artGallery {
         max-width: 90vw;
         border: 4px solid var(--bisque);
     }
+
+    /* .right {
+        position: fixed;
+        right: 25%;
+        top: 50%;
+        z-index: 3; 
+        width: 40px;
+        height: 20px;
+        background-color: #FFD471;
+    } */
 }
 
 main.ux {
@@ -628,6 +662,10 @@ main.ux {
             width: 75vw;
         }
     }
+
+    /* .buttonsIndex {
+        border: solid 4px #8B08AF;
+    } */
 }
 
 @media (min-width: 736px) {
@@ -740,10 +778,14 @@ main.ux {
                 }
             }
         }
+
+        ul .sub {
+            margin-left: 0px;
+        }
     }
 
     main, main.index {
-        p, span, li, a, h3 {
+        p, span, li, a, h3, i {
             font-size: 1.4rem;
         }
 
@@ -815,10 +857,6 @@ main.ux {
             align-self: center;
         }
 
-        .column h3 {
-            margin-left: 1.75vw;
-        }
-
         b {
             margin: auto 1.75vw;
         }
@@ -842,6 +880,8 @@ main.ux {
     } */
 
     main.index {
+        margin-top: 84px;
+
         p {
             margin: 10px auto;
         }
@@ -867,6 +907,10 @@ main.ux {
             border-radius: 10px;
             margin: 80px 60px;
             max-width: 750px;
+        }
+
+        .flowersIndex {
+            margin-top: 35px;
         }
     }
 }
