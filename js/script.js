@@ -13,9 +13,6 @@ function myFunction2() {
 function openImageOverlay(event) {
     let imgSrc = event.target.src;
     console.log("img src: ", imgSrc);
-    // let imgSrcParts = imgSrc.split('.');
-    // let newImgSrc = imgSrcParts[0]+'.jpg'
-    // console.log("img src 2: ", imgSrcParts)
 
     const overlay = document.getElementsByClassName('overlay')[0];
     overlay.style.display = 'block';
@@ -28,17 +25,14 @@ function openImageOverlay(event) {
 
 
     const image = document.createElement('img');
-    image.src = imgSrc; //newImgSrc;
+    image.src = imgSrc;
     image.className = "imageOverlay";
-    // const right = document.createElement('button');
-    // right.className = "buttonNext"
     image.style.opacity = '0.1'; 
     image.style.transform = 'translate(-50%, -50%) scale(0.5)';
     image.style.transition = 'opacity 0.5s ease, transform 0.3s ease 0.1s';
 
     const main = document.querySelector('main');
     main.appendChild(image);
-    //main.appendChild(right);
 
     setTimeout(() => {
         image.style.opacity = '1'; // Fade in
@@ -52,7 +46,7 @@ function closeImageOverlay() {
     overlay.style.transition = 'opacity 0.5s ease-out';
 
     setTimeout(() => {
-        overlay.style.opacity = '0';
+        overlay.style.opacity = '0'; //Fade out
     }, 300);
 
     setTimeout(() => {
